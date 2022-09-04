@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 import logo from "../../assets/logo.png";
-import { Link } from 'react-router-dom';
+import CustomButton from "../CustomButton/CustomButton";
 
 const Header = () => {
   return (
@@ -13,13 +13,7 @@ const Header = () => {
             backgroundImage: `url(${logo})`,
           }}
         />
-          <div className="navBar">
-            <button className='button'>
-              <Link to='/signin' className="linkBro">
-                  Sign In
-              </Link>
-            </button>
-          </div>
+        <CustomButton path='signin' text='Sign In'/>
       </div>
     </>
   );

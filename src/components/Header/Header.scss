@@ -1,10 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .headerContainer {
-  width: 95vw;
+  width: 90vw;
   height: 10vh;
   margin: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
 }
 
 .background-image {
@@ -13,33 +20,13 @@
   background-position: center;
   background-size: cover;
 
-  @media screen and (min-width: 768px) {
-    width: 220px;
-    height: 60px
-}
+    @media screen and (min-width: 768px) {
+        width: 220px;
+        height: 60px
+    }   
 }
 
 .linkBro{
     text-decoration: none;
     color: white;
-}
-
-.navBar{
-    width: 50px;
-    height: 30px;
-    padding-right: 15px;
-
-    @media screen and (min-width: 768px) {
-        width: 70px;
-        height: 40px;
-        padding-right: 5px;
-    }
-}
-
-.button{
-    border-radius: 7px;
-    background-color: red;
-    border: 0;
-    width: 120%;
-    height: 120%;
 }

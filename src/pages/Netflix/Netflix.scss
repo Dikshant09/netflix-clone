@@ -1,0 +1,39 @@
+.netflixContainer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.getStarted{
+    position: absolute;
+    width: 100vw;
+    height: 75vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40));
+}
+
+
+.coverImage{
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    background-position: cover;
+    background-size:cover; 
+}
+
+.emailBlock{
+    display: flex;
+    justify-content: center;
+}

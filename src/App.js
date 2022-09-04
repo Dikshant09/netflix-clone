@@ -1,9 +1,13 @@
-import './App.css';
+import './App.scss';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import Login from './pages/Login';
-import Netflix from './pages/Netflix';
-import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn/SignIn';
+import Netflix from './pages/Netflix/Netflix';
+import SignUp from './pages/SignUp/SignUp';
 import Header from './components/Header/Header';
+import Home from './pages/Home/Home';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
@@ -11,9 +15,11 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Netflix />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} /> 
+        <Route path="/home" element={<Home />} /> 
       </Routes>
+      <ToastContainer />
     </Router>
   )
 }
