@@ -3,10 +3,11 @@ import "./Header.scss";
 import logo from "../../assets/logo.png";
 import CustomButton from "../CustomButton/CustomButton";
 
-const Header = () => {
+const Header = ({classGiven}) => {
+  console.log(classGiven);
   return (
     <>
-      <div className="headerContainer">
+      <div className={classGiven !== undefined ? `${classGiven} headerContainer`: "headerContainer"}>
         <div
           className="background-image"
           style={{

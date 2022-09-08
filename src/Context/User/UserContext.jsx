@@ -1,53 +1,31 @@
-// import { createContext, useReducer } from "react";
-// import UserReducer from "./UserReducer";
-
-// const UserContext = createContext();
-
-// export const UserProvider = ({ children }) => {
-//     const initialState = {
-//         email: '@',
-//         name: '',
-//     };
-
-//     const [state, dispatch] = useReducer(UserReducer, initialState);
-
-//     return (
-//         <UserContext.Provider
-//             value={{
-//                 ...state,
-//                 dispatch
-//             }}
-//         >
-//             {children}
-//         </UserContext.Provider>
-//     )
-// }
-
-// export default UserContext;
-
-
-import { createContext, useReducer } from "react";
-import UserReducer from "./UserReducer";
+import { useReducer, createContext } from "react";
+import userReducer from "./UserReducer.jsx";
 
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const initialState = {
     email: '',
-    name: '',
+    name: 'dk',
   };
 
-  const [state, dispatch] = useReducer(UserReducer, initialState);
+  const [state, dispatch] = useReducer(userReducer, initialState);
 
-   return (
+  // Set an user email
+  const setUserEmail = (email, type) => {
+    dispatch({
+      type: "SET_USER_EMAIL",
+      payload: email,
+    });
+  };
+
+  return (
     <UserContext.Provider
       value={{
-        // passing complete state
         ...state,
-        dispatch,
+        setUserEmail,
       }}
     >
-      
       {children}
     </UserContext.Provider>
   );

@@ -1,28 +1,16 @@
-// const UserReducer = (state, action) => {
-//     switch(action.type){
-//         case "SET_EMAIL":
-//             return {
-//                 ...state,
-//                 email: action.payload,
-//             };
-//         default:
-//             return state;
-//     }
-// };
+const alertReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_USER_EMAIL":
+      return {
+        ...state,
+        email: action.payload,
+      };
+    case "REMOVE_ALERT":
+      return null;
 
-// export default UserReducer;
+    default:
+      return state;
+  }
+};
 
-const UserReducer = (state, action) => {
-    switch (action.type) {
-      case "SET_EMAIL":
-        return {
-          ...state,
-          email: action.payload,
-        };
-      default:
-        return state;
-    }
-  };
-  
-  export default UserReducer;
-  
+export default alertReducer;
