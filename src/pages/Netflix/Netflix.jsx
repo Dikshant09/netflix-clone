@@ -20,9 +20,14 @@ const Netflix = () => {
           </p>
           <div className="emailBlock">
             <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} 
-            className='textInput'
+            className='emailInput'
+            width=''
             placeholder="Enter your email address"id="" />
-            <CustomButton email={email} path='home' text='Get Started' width="90px" height="35px"/>
+            <div className='emailSubmitButton'>
+              <CustomButton email={email} path='home' text='Get Started' 
+              
+              width="90px" height="35px"/>
+            </div>
           </div>
         </div>
       </div>

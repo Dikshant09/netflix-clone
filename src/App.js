@@ -8,9 +8,11 @@ import Home from './pages/Home/Home';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { UserProvider } from './Context/User/UserContext';
 
 const App = () => {
   return (
+    <UserProvider>
     <Router>
       <Header />
       <Routes>
@@ -21,6 +23,7 @@ const App = () => {
       </Routes>
       <ToastContainer />
     </Router>
+    </UserProvider>
   )
 }
 
