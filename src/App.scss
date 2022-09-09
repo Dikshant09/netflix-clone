@@ -11,14 +11,15 @@
 .head-text{
   text-align: center;
   font-size: 4.5rem;
-
+  color:white;
+  
   @media screen and (max-width: 968px){
     font-size: 2.5rem;
   }
 
 
-  @media screen and (max-weight: 360px){
-    font-size: 0.5rem;
+  @media screen and (max-width: 360px){
+    font-size: 2rem;
   }
 }
 
@@ -28,4 +29,46 @@
 
 .position-fixed-not{
   position: relative;
+}
+
+.signInContainer{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  width: 20rem;
+  height: 20rem;
+  background-color: black;
+}
+
+.signInInnerContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.putDown{
+  position: relative;
+  top: 14px;
+}
+
+.margin-1{
+  margin: 1rem;
+}
+
+.margin-2{
+  margin: 1rem;
+}
+
+
+.linkBro{
+  text-decoration: none;
+  color: white;
+}
+
+.gray-color{
+  color: #807574;
 }

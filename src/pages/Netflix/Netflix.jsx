@@ -15,7 +15,7 @@ const Netflix = () => {
 
   return (
     <>
-    <Header classGiven='position-fixed'/>
+    <Header classGiven='position-fixed' showButton/>
     <div className="netflixContainer coverImage" style={{
       backgroundImage: `url(${cover})`,
     }}>
@@ -31,12 +31,13 @@ const Netflix = () => {
           <div className="emailBlock">
             <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} 
             className='emailInput'
-            width=''
+            required
             placeholder="Enter your email address"id="" />
             <div className='emailSubmitButton' onClick={setEmailBro}>
               <CustomButton email={email} path='home' text='Get Started' 
-              
-              width="90px" height="35px"/>
+              width="90px" height="35px"
+              showButton
+              />
             </div>
           </div>
         </div>
