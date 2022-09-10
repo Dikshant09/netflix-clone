@@ -135,7 +135,7 @@ const SignUp = () => {
             </div>
             <div className='signUpButtons'>
               <div
-                className="putDown signButtons margin-2"
+                className="putDown signButtons margin-1"
                 onClick={(e) => handleSubmit(e)}
               >
                 <CustomButton redirectNo path="home" text="Sign Up" />

@@ -1,14 +1,16 @@
-import React from "react";
+import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import { toast } from "react-toastify";
 import googleIcon from "./googleIcon.svg";
+import UserContext from "../../Context/User/UserContext";
 
 const OAuth = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { setUserEmail, setUserName } = useContext(UserContext);
 
   const onGoogleClick = async () => {
     try {
@@ -29,6 +31,9 @@ const OAuth = () => {
           timestamp: serverTimestamp(),
         });
       }
+      
+      setUserEmail(user.email, "SET_USER_EMAIL");
+      setUserName(user.displayName, "SET_USER_NAME");
 
       toast.success(
         `Signed ${

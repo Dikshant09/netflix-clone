@@ -3,7 +3,7 @@ import Header from '../../components/Header/Header';
 import cover from "../../assets/cover.png";
 import CustomButton from '../../components/CustomButton/CustomButton';
 import './SignIn.scss';
-import AlertContext from "../../Context/User/UserContext";
+import UserContext from "../../Context/User/UserContext";
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -11,7 +11,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const { Name, Email, setUserEmail, setUserName } = useContext(AlertContext);
+  const { Name, Email, setUserEmail, setUserName } = useContext(UserContext);
 
   const [user, setUser] = useState({
     email: Email,

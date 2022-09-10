@@ -1,0 +1,33 @@
+.mainHeaderContainer{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    position:static;
+}
+
+.mainHeaderLeft{
+    width: 50vw;
+    height: 10vh;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mainHeaderLogoImage{
+    width: 150px;
+    height: 60px;
+    background-position: center;
+    background-size: cover;
+    // padding: 0.5rem;
+    position: sticky;
+}
+
+.mainHeaderRight{
+    margin-right: 0.5rem;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+}
