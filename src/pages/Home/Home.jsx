@@ -1,23 +1,34 @@
-import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import CustomButton from "../../components/CustomButton/CustomButton";
 import Header from "../../components/Header/Header";
-import AlertContext from "../../Context/User/UserContext";
+import { useAuthStatus } from '../../hooks/useAuthStatus.js';
+import { getAuth } from "firebase/auth";
 
 const Home = () => {
-    const { name, email } = useContext(AlertContext);
     const navigate = useNavigate();
-    useEffect(() => {
-        if(!email || !email.includes('@')){
-            toast.error('Please enter a valid email address');
-            console.log(email);
-            navigate('/');
-        }
-    }, [email])
+    
+    const auth = getAuth();
+    const { loggedIn } = useAuthStatus();
+
+    const handleLogOut = (e) => {
+      e.preventDefault();
+  
+      auth.signOut();
+  
+      navigate("/");
+    };
+  
   return (
     <>
     <Header classGiven="position-fixed-not"/>
-    <h1>hello {email}</h1>
+      <h1>hello </h1>
+      <div onClick={(e) => handleLogOut(e)}>
+        {
+          loggedIn && 
+          <h1>{auth.currentUser.displayName}</h1>
+        }
+        <CustomButton text='Log Out' redirectNo/>
+      </div>
     </>
   )
 }

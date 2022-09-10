@@ -1,6 +1,7 @@
 .signInContainer{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     // background-color: black;
     background: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70));
 
@@ -31,7 +32,7 @@
     border: 0;
 
 
-    @media screen and (max-width: 758px){
+    @media screen and (max-width: 767px){
         width: 80%;
     }
 
@@ -46,4 +47,6 @@
 
 .signButtons{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

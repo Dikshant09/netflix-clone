@@ -8,6 +8,8 @@ import Home from './pages/Home/Home';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { UserProvider } from './Context/User/UserContext';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
+import PrivateRoute from './components/Spinner/PrivateRoute';
 
 const App = () => {
   return (
@@ -18,7 +20,12 @@ const App = () => {
         <Route path="/" element={<Netflix />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} /> 
-        <Route path="/home" element={<Home />} /> 
+
+        <Route path="/home" element={<PrivateRoute />}>
+          <Route path="/home" element={<Home />} /> 
+        </Route> 
+
+        <Route path="/forgotPassword" element={<ForgotPassword />} /> 
       </Routes>
       <ToastContainer />
     </Router>

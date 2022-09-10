@@ -4,13 +4,22 @@ import cover from "../../assets/cover.png";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import AlertContext from "../../Context/User/UserContext";
 import Header from "../../components/Header/Header";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Netflix = () => {
   const [email, setEmail] = useState('');
-  const { user, setUserEmail } = useContext(AlertContext);
-  
+  const { setUserEmail } = useContext(AlertContext);
+  const navigate = useNavigate();
+
   const setEmailBro = () => {
     setUserEmail(email, "SET_USER_EMAIL");
+
+    if(email === ''){
+      toast.error('Please enter a valid email address');
+      navigate('/');
+      return ;
+    }
   }
 
   return (
@@ -34,7 +43,7 @@ const Netflix = () => {
             required
             placeholder="Enter your email address"id="" />
             <div className='emailSubmitButton' onClick={setEmailBro}>
-              <CustomButton email={email} path='home' text='Get Started' 
+              <CustomButton email={email} path='signup' text='Get Started'
               width="90px" height="35px"
               showButton
               />

@@ -5,8 +5,8 @@ const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const initialState = {
-    email: '',
-    name: 'dk',
+    Email: '',
+    Name: '',
   };
 
   const [state, dispatch] = useReducer(userReducer, initialState);
@@ -19,11 +19,20 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  // Set an user name
+  const setUserName = (name, type) => {
+    dispatch({
+      type: "SET_USER_NAME",
+      payload: name,
+    });
+  };
+
   return (
     <UserContext.Provider
       value={{
         ...state,
         setUserEmail,
+        setUserName
       }}
     >
       {children}
