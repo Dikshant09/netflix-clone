@@ -13,10 +13,10 @@ const MainHeader = () => {
             }} /> 
             {
                 ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'].map((item, index) => (
-                    <Link to={(item.replace(/\s+/g, '')).toLowerCase()} className=
+                    <Link key={index} to={(item.replace(/\s+/g, '')).toLowerCase()} className=
                     'linkBro black-color margin-half'>
                         <h4 key={item}>{item}</h4>
-                        {console.log(index)}
+                        {/* {console.log(index)} */}
                     </Link>
                 ))
             }

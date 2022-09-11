@@ -10,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { UserProvider } from './Context/User/UserContext';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import PrivateRoute from './components/Spinner/PrivateRoute';
+import PrivateRouteNetflix from './pages/Netflix/PrivateRouteNetflix';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 const App = () => {
   return (
@@ -17,7 +19,9 @@ const App = () => {
     <Router>
       {/* <Header /> */}
       <Routes>
-        <Route path="/" element={<Netflix />} />
+        <Route path="/" element={<PrivateRouteNetflix />}>
+          <Route path="/" element={<Netflix />} />
+        </Route>
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} /> 
 
@@ -26,6 +30,7 @@ const App = () => {
         </Route> 
 
         <Route path="/forgotPassword" element={<ForgotPassword />} /> 
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       <ToastContainer />
     </Router>
