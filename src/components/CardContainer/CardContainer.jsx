@@ -25,11 +25,15 @@ const CardContainer = ({ keyBro, valueBro }) => {
         <Swiper spaceBetween={50} slidesPerView={5}>
           <div className="menu-container">
             <div className="menu-containerItem">
-              {item.map((item, index) => (
-                <SwiperSlide key={index}>
+              {item.map((item, index) => 
+                {
+                  if(index < 9){
+                   return ( <SwiperSlide key={index}>
                   <Card key={index} item={item} />
-                </SwiperSlide>
-              ))}
+                  </SwiperSlide>)
+                }
+                }
+                  )}
             </div>
           </div>
         </Swiper>
