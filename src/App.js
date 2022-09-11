@@ -12,6 +12,7 @@ import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import PrivateRoute from './components/Spinner/PrivateRoute';
 import PrivateRouteNetflix from './pages/Netflix/PrivateRouteNetflix';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import Profile from './pages/Profile/Profile';
 
 const App = () => {
   return (
@@ -31,6 +32,8 @@ const App = () => {
 
         <Route path="/forgotPassword" element={<ForgotPassword />} /> 
         <Route path="*" element={<ErrorPage />} />
+
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <ToastContainer />
     </Router>

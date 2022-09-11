@@ -37,14 +37,14 @@ const OAuth = () => {
 
       toast.success(
         `Signed ${
-          location.pathname === "/sign-up" ? "up " : "in "
+          location.pathname === "/signup" ? "up " : "in "
         } Successfully!`
       );
 
       navigate("/home");
     } catch (error) {
       toast.error(
-        `Couldn't sign${location.pathname === "/sign-up" ? "up " : "in "}!`
+        `Couldn't sign${location.pathname === "/signup" ? "up " : "in "}!`
       );
     }
   };

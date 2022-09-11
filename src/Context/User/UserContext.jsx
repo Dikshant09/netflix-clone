@@ -7,6 +7,7 @@ export const UserProvider = ({ children }) => {
   const initialState = {
     Email: '',
     Name: '',
+    Search: '',
   };
 
   const [state, dispatch] = useReducer(userReducer, initialState);
@@ -27,12 +28,21 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  // Set an user search
+  const setUserSearch = (search, type) => {
+    dispatch({
+      type: "SET_USER_SEARCH",
+      payload: search,
+    });
+  };
+
   return (
     <UserContext.Provider
       value={{
         ...state,
         setUserEmail,
-        setUserName
+        setUserName,
+        setUserSearch
       }}
     >
       {children}

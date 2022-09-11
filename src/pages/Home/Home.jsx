@@ -4,11 +4,13 @@ import Header from "../../components/Header/Header";
 import { useAuthStatus } from '../../hooks/useAuthStatus.js';
 import { getAuth } from "firebase/auth";
 import axios from 'axios';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import MainHeader from "../../components/MainHeader/MainHeader";
+import UserContext from "../../Context/User/UserContext";
 
 const Home = () => {
-    const navigate = useNavigate();
+  const { Search } = useContext(UserContext);
+    const navigate = useNavigate(); 
     
     const auth = getAuth();
     const { loggedIn } = useAuthStatus();
@@ -37,6 +39,7 @@ const Home = () => {
   return (
     <>
     <MainHeader />
+    Hello
    {/* <Header classGiven="position-fixed"/>
       <h1>hello </h1>
       <div onClick={(e) => handleLogOut(e)}>
@@ -54,6 +57,9 @@ const Home = () => {
             <img src={movie.image} alt={movie.fullTitle} />
         </>
       ))}  */}
+      {
+        <h1>{Search}</h1>
+      }
     </>
   )
 }
