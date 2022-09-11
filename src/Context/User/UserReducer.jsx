@@ -17,6 +17,12 @@ const userReducer = (state, action) => {
         Search: action.payload,
       };
 
+    case "SET_DATA":
+      return {
+        ...state,
+        Data: action.payload,
+      };
+
     default:
       return state;
   }

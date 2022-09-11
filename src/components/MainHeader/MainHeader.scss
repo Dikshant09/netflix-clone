@@ -4,11 +4,37 @@
     display: flex;
     justify-content: space-between;
     position:static;
-    // background-color: red;
+    background-color: transparent;
+    background-color: gray;
+    position: relative;
     // position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+.mainHeaderContainerScrolling{
+    justify-content: space-between;
+    position:static;
+    background-color: transparent;
+    background-color: gray;
+    // position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    flex-direction: column;
 }
 
 .mainHeaderLeft{
+    width: 70vw;
+    height: 10vh;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.mainHeaderLeftScrolling{
     width: 70vw;
     height: 10vh;
     display: flex;
@@ -22,7 +48,7 @@
     height: 60px;
     background-position: center;
     background-size: cover;
-    position: sticky;
+    // position: sticky;
 }
 
 .mainHeaderRight{
@@ -33,6 +59,14 @@
     align-items: center;
 }
 
+.mainHeaderRightScrolling{
+    margin-right: 0.5rem;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+}
 .powerButton{
     &:hover{
         color: red;

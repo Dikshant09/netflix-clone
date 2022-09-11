@@ -8,6 +8,7 @@ export const UserProvider = ({ children }) => {
     Email: '',
     Name: '',
     Search: '',
+    Data: null
   };
 
   const [state, dispatch] = useReducer(userReducer, initialState);
@@ -36,13 +37,22 @@ export const UserProvider = ({ children }) => {
     });
   };
 
+  // Set data
+  const setData = (data, type) => {
+    dispatch({
+      type: "SET_DATA",
+      payload: data,
+    });
+  };
+
   return (
     <UserContext.Provider
       value={{
         ...state,
         setUserEmail,
         setUserName,
-        setUserSearch
+        setUserSearch,
+        setData
       }}
     >
       {children}

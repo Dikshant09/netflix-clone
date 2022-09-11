@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { useState, useContext } from "react";
 import UserContext from "../../Context/User/UserContext";
 
-const MainHeader = () => {
+const MainHeader = ({ positionRelative }) => {
     const { setUserSearch } = useContext(UserContext);
 
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -44,10 +44,12 @@ const MainHeader = () => {
 
     navigate("/profile");
   };
-
+{console.log(!positionRelative,  'scrolled')}
   return (
-    <div className="mainHeaderContainer">
-      <div className="mainHeaderLeft">
+    <div className={
+      !positionRelative ? `mainHeaderContainerScrolling` : `mainHeaderContainer`}
+      >
+      <div className={!positionRelative ? `mainHeaderLeftScrolling`: "mainHeaderLeft"}>
         <Link to='/'>
             <div
             className="mainHeaderLogoImage"
@@ -70,7 +72,7 @@ const MainHeader = () => {
           )
         )}
       </div>
-      <div className="mainHeaderRight">
+      <div className={!positionRelative ? `mainHeaderRightScrolling` : `mainHeaderRight`}>
         {showSearchBar && (
           <>
             <input
