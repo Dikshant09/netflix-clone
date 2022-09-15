@@ -6,23 +6,23 @@
     position:static;
     background-color: transparent;
     background-color: gray;
-    position: relative;
+    // position: relative;
     // position: fixed;
     top: 0;
     z-index: 3;
 }
 
-.mainHeaderContainerScrolling{
-    justify-content: space-between;
-    position:static;
-    background-color: transparent;
-    background-color: gray;
-    // position: relative;
-    position: fixed;
-    top: 0;
-    z-index: 3;
-    flex-direction: column;
-}
+// .mainHeaderContainerScrolling{
+//     justify-content: space-between;
+//     position:static;
+//     background-color: transparent;
+//     background-color: gray;
+//     // position: relative;
+//     position: fixed;
+//     top: 0;
+//     z-index: 3;
+//     flex-direction: column;
+// }
 
 .mainHeaderLeft{
     width: 70vw;
@@ -34,14 +34,14 @@
 }
 
 
-.mainHeaderLeftScrolling{
-    width: 70vw;
-    height: 10vh;
-    display: flex;
-    text-align: center;
-    justify-content: flex-start;
-    align-items: center;
-}
+// .mainHeaderLeftScrolling{
+//     width: 70vw;
+//     height: 10vh;
+//     display: flex;
+//     text-align: center;
+//     justify-content: flex-start;
+//     align-items: center;
+// }
 
 .mainHeaderLogoImage{
     width: 150px;
@@ -59,14 +59,14 @@
     align-items: center;
 }
 
-.mainHeaderRightScrolling{
-    margin-right: 0.5rem;
-    display: flex;
-    text-align: center;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100vw;
-}
+// .mainHeaderRightScrolling{
+//     margin-right: 0.5rem;
+//     display: flex;
+//     text-align: center;
+//     justify-content: flex-start;
+//     align-items: center;
+//     width: 100vw;
+// }
 .powerButton{
     &:hover{
         color: red;

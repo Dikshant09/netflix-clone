@@ -44,12 +44,16 @@ const MainHeader = ({ positionRelative }) => {
 
     navigate("/profile");
   };
-{console.log(!positionRelative,  'scrolled')}
+// {console.log(positionRelative,  'scrolled')}
   return (
-    <div className={
-      !positionRelative ? `mainHeaderContainerScrolling` : `mainHeaderContainer`}
-      >
-      <div className={!positionRelative ? `mainHeaderLeftScrolling`: "mainHeaderLeft"}>
+    // <div className={
+    //   !positionRelative ? `mainHeaderContainerScrolling` : `mainHeaderContainerScrolling`}
+    //   >
+    // <div className="mainHeaderContainerScrolling"
+    //   >
+    //  <div className={!positionRelative ? `mainHeaderLeftScrolling`: "mainHeaderLeft"}>
+    <div className="mainHeaderContainer">
+      <div className="mainHeaderLeft">
         <Link to='/'>
             <div
             className="mainHeaderLogoImage"
@@ -72,7 +76,8 @@ const MainHeader = ({ positionRelative }) => {
           )
         )}
       </div>
-      <div className={!positionRelative ? `mainHeaderRightScrolling` : `mainHeaderRight`}>
+      {/* <div className={!positionRelative ? `mainHeaderRightScrolling` : `mainHeaderRight`}> */}
+      <div className="mainHeaderRight">
         {showSearchBar && (
           <>
             <input
