@@ -8,9 +8,12 @@ import UserContext from "../../Context/User/UserContext";
 const CardContainer = ({ keyBro, valueBro }) => {
   const { Search, Data } = useContext(UserContext);
 
-  const item = valueBro.filter((itemBro) =>
+  // const item = valueBro ? (valueBro.filter((itemBro) =>
+  //   itemBro.title?.toLowerCase().includes(Search.toLowerCase())
+  // )) : null;
+  const item = valueBro ? (valueBro.filter((itemBro) =>
     itemBro.title?.toLowerCase().includes(Search.toLowerCase())
-  );
+  )) : null;
 
   const getTitle = (title) => {
     return title.replace(/([A-Z])/g, " $1").replace(/^./, function (str) {
