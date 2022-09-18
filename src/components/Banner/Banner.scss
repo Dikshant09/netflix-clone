@@ -1,0 +1,29 @@
+.bannerContainer{
+    // display: flex;
+    width: 100vw;
+    height: 60vh;
+    // position: relative;
+    // top: 30px;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.6;
+}
+
+.bannerParent{
+    height: 60vh;
+    width: 100vw;
+}
+
+.bannerContent{
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    width: 40%;
+    height: 100%;
+    font-size: 1.3rem;
+    padding: 7rem;
+    flex-direction: column;
+}

@@ -10,6 +10,7 @@ import UserContext from "../../Context/User/UserContext";
 import GetDataBro from "./GetDataBro";
 import CardContainer from "../../components/CardContainer/CardContainer";
 import Spinner from "../../components/Spinner/Spinner";
+import Banner from "../../components/Banner/Banner";
 
 const Home = () => {
     const { Search, Data } = useContext(UserContext);
@@ -28,9 +29,12 @@ const Home = () => {
     // }, [])
   return (
     <>
-    {scroll ? <MainHeader /> : <MainHeader positionRelative/>}
+    {/* {scroll ? <MainHeader /> : <MainHeader positionRelative/>} */}
       {/* <MainHeader positionFixed/> */}
-    <GetDataBro />
+      <GetDataBro />
+      {/* {!Search ?  */}
+  <Banner /> 
+
     {/* {data && Object.keys(data).map((item, index) => <CardContainer key={index} item={item}/>)} */}
     <div className='homePageContainer'>
       {data && Object.entries(data).map(([key, value], index) =>
